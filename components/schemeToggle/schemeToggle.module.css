@@ -1,0 +1,12 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 1px solid var(--primary-color);
+}

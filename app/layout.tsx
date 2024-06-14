@@ -1,11 +1,11 @@
 import { cookies } from "next/headers";
 import { DARK_THEME, LIGHT_THEME } from "@/utils/colors";
 import type { Metadata } from "next";
-import { Mulish } from "next/font/google";
+import { Space_Mono } from "next/font/google";
+import { Header, SchemeToggle } from "@/components";
 import "./globals.css";
-import { SchemeToggle } from "@/components";
 
-const mulish = Mulish({ subsets: ["latin"] });
+const spaceMono = Space_Mono({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Jean - DevKit",
@@ -23,10 +23,10 @@ export default function RootLayout({
 
   return (
     <html lang="en" data-color-theme={theme} style={themeColors}>
-      <body className={mulish.className}>
-        <header>
+      <body className={spaceMono.className}>
+        <Header>
           <SchemeToggle initialTheme={theme} />
-        </header>
+        </Header>
         {children}
       </body>
     </html>

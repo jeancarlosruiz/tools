@@ -31,10 +31,12 @@ h1,
 h2,
 h3 {
   text-wrap: balance;
+  letter-spacing: -0.016rem;
 }
 
 p {
   text-wrap: pretty;
+  letter-spacing: -0.25px;
 }
 
 button {
@@ -45,6 +47,19 @@ img,
 svg {
   height: auto;
   max-width: 100%;
+}
+
+.app-container {
+  --space: 3rem;
+
+  width: min(calc(100% - var(--space)), 45.625rem);
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .app-container {
+    --space: 4rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

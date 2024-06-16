@@ -1,0 +1,101 @@
+.main h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.section {
+    padding-block-start: 24px;
+}
+
+.link {
+    display: inline-flex;
+    justify-content: baseline;
+    align-items: center;
+    gap: .5rem;
+}
+
+.svg path {
+    fill: var(--text-color);
+}
+
+.wrapper {
+    display: flex;
+}
+
+.button {
+    height: fit-content;
+    display: inline-flex;
+    align-items: center;
+
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    padding-block: 6px;
+    padding-inline: 6px;
+    border-radius: 50%;
+
+    margin-left: auto;
+}
+
+.button:focus-visible {
+    outline: 2px dashed var(--secondary-color);
+}
+
+.dropdownMenuContent {
+    --rigth-space: 24px;
+
+    position: relative;
+    right: var(--rigth-space);
+    background-color: var(--bg-color);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-inline: 24px;
+    padding-block: 24px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.dropdownMenuWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.dropdownMenuSeparator {
+    height: 1px;
+    background-color: var(--text-color);
+}
+
+.dropdownMenuItem {
+    cursor: pointer;
+    padding-inline: 6px;
+}
+
+.dropdownMenuItem:hover {
+    /* outline-color: var(--text-color);
+    outline-style: solid; */
+    outline: none;
+}
+
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.input {
+    background-color: var(--border-color);
+    border: transparent;
+    padding-inline: 10px;
+    padding-block: 14px;
+    border-radius: 10px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.input:focus-visible {
+    outline: 2px dashed var(--secondary-color);
+}

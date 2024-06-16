@@ -1,0 +1,19 @@
+.main h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.section {
+    padding-block-start: 24px;
+}
+
+.link {
+    display: inline-flex;
+    justify-content: baseline;
+    align-items: center;
+    gap: .5rem;
+}
+
+.svg path {
+    fill: var(--text-color);
+}

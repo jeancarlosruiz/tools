@@ -13,5 +13,9 @@
 }
 
 .button:focus-visible {
-  outline: 1px solid var(--primary-color);
+  outline: 2px dashed var(--secondary-color);
+}
+
+.svg path {
+  fill: var(--text-color);
 }

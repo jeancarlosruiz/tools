@@ -60,6 +60,10 @@ li {
   color: inherit;
 }
 
+.svg path {
+  fill: var(--text-color);
+}
+
 .app-container {
   --space: 3rem;
 

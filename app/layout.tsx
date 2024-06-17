@@ -2,7 +2,9 @@ import { cookies } from 'next/headers';
 import { DARK_THEME, LIGHT_THEME } from '@/utils/colors';
 import type { Metadata } from 'next';
 import { Space_Mono } from 'next/font/google';
-import { Header, SchemeToggle } from '@/components';
+// import { Header, SchemeToggle } from '@/components';
+import Header from '../components/header/header';
+import SchemeToggle from '../components/schemeToggle/schemeToggle';
 import './globals.css';
 
 const spaceMono = Space_Mono({

@@ -1,4 +1,4 @@
-import styles from "./header.module.css";
+import styles from './header.module.css';
 
 // Change any
 const Header = ({ children }: any) => {

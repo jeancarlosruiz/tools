@@ -1,198 +1,27 @@
 .main h1 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
+  color: var(--primary-color);
 }
 
-.section {
-    padding-block-start: 24px;
-}
-
-.link {
-    display: inline-flex;
-    justify-content: baseline;
-    align-items: center;
-    gap: .5rem;
-}
-
-.svg path {
-    fill: var(--text-color);
+.main p {
+  text-align: center;
+  margin-block-start: 10px;
 }
 
 .wrapper {
-    display: flex;
-    align-items: center;
+  padding-block-start: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.button {
-    height: fit-content;
-    display: inline-flex;
-    align-items: center;
-
-    background-color: transparent;
-    border: transparent;
-    cursor: pointer;
-    padding-block: 6px;
-    padding-inline: 6px;
-    border-radius: 5px;
-
-    margin-left: auto;
+.link {
+  display: inline-flex;
+  justify-content: baseline;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.button:focus-visible {
-    outline: 2px dashed var(--secondary-color);
-}
-
-.selectTrigger {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    min-width: 12rem;
-    padding-inline-start: 10px;
-    padding-inline-end: 5px;
-    padding-block: 5px;
-
-    background-color: var(--border-color);
-    border: transparent;
-    border-radius: 8px;
-    color: var(--text-color);
-}
-
-.selectTrigger:focus-visible {
-    outline: 2px dashed var(--secondary-color);
-}
-
-.selectTrigger svg {
-    margin-inline-start: auto;
-}
-
-.selectContent {
-    --rigth-space: 24px;
-
-    position: relative;
-    right: var(--rigth-space);
-    background-color: var(--bg-color);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding-inline: 24px;
-    padding-block: 24px;
-    border-radius: 8px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-}
-
-.selectItem {
-    cursor: pointer;
-    padding-inline: 6px;
-    display: flex;
-    justify-content: baseline;
-    align-items: center;
-    gap: .5rem;
-}
-
-.selectItem:hover {
-    /* outline-color: var(--text-color);
-    outline-style: solid; */
-    outline: none;
-}
-
-.selectItem:focus-visible {
-    outline: none;
-}
-
-
-.dropdownMenuContent {
-    --rigth-space: 24px;
-
-    position: relative;
-    right: var(--rigth-space);
-    background-color: var(--bg-color);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding-inline: 24px;
-    padding-block: 24px;
-    border-radius: 8px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-}
-
-.dropdownMenuWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-.dropdownMenuSeparator {
-    height: 1px;
-    background-color: var(--text-color);
-}
-
-.dropdownMenuItem {
-    cursor: pointer;
-    padding-inline: 6px;
-}
-
-.dropdownMenuItem:hover {
-    /* outline-color: var(--text-color);
-    outline-style: solid; */
-    outline: none;
-}
-
-
-.inputWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-.input {
-    background-color: var(--border-color);
-    border: transparent;
-    padding-inline: 10px;
-    padding-block: 14px;
-    border-radius: 10px;
-    color: var(--text-color);
-    font-size: 1rem;
-}
-
-/* * Ocultar flechas en los inputs de tipo number */
-.input[type="number"]::-webkit-inner-spin-button,
-.input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.inputQty[type="number"]::-webkit-inner-spin-button,
-.inputQty[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.inputTotal[type="number"]::-webkit-inner-spin-button,
-.inputTotal[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.input[type="number"] {
-    -moz-appearance: textfield;
-    /* Firefox */
-}
-
-.input:focus-visible {
-    outline: 2px dashed var(--secondary-color);
-}
-
-.codeBox {
-    /* color: black; */
-    /* background-color: hsl(194, 53%, 73%); */
-
-    border-radius: 8px;
-    padding-inline: 10px;
-    padding-block: 10px;
-
-    display: flex;
-    align-items: center;
-    gap: .5rem;
+.svg path {
+  fill: var(--text-color);
 }

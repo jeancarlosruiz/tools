@@ -6,12 +6,18 @@
   --clr-black-800: hsl(193, 100%, 7%);
   --clr-black-700: hsl(193, 96%, 11%);
   --clr-black-600: hsl(193, 100%, 13%);
+  --clr-black-400: hsl(193, 98%, 21%);
   --clr-blue-100: hsl(194, 53%, 73%);
+  --clr-white-400: hsl(210, 40%, 98%);
   --clr-white-500: hsl(240, 5%, 96%);
   --clr-green-700: hsl(165, 87%, 28%);
   --clr-green-600: hsl(155, 100%, 43%);
   --clr-green-500: hsl(155, 76%, 60%);
   --clr-green-400: hsl(155, 76%, 72%);
+
+  --body-fs: 1.3rem;
+  --title-fs: clamp(2.5rem, 2.0229rem + 2.0356vw, 3rem);
+  --input-fs: 1rem;
 }
 
 * {
@@ -38,9 +44,17 @@ h3 {
   letter-spacing: -0.016rem;
 }
 
+/* Titles */
+h1 {
+  font-size: var(--title-fs);
+}
+
+/* Body text */
 p {
   text-wrap: pretty;
   letter-spacing: -0.25px;
+  /* font-size: var(--body-fs); */
+  font-size: 16px;
 }
 
 button {
@@ -64,6 +78,18 @@ li {
   fill: var(--text-color);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .app-container {
   --space: 3rem;
 
@@ -78,7 +104,6 @@ li {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {

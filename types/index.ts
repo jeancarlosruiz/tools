@@ -5,6 +5,7 @@ export interface ThemeColors {
   "--secondary-color": string;
   "--accent-color": string;
   "--border-color": string;
+  "--bg-input": string;
 }
 
 export interface InitialThemeProps {

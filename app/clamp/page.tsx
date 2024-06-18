@@ -1,3 +1,4 @@
+import ClampConvertion from "@/components/clampConvertion/clampConvertion";
 import PageHeader from "@/components/pageHeader/pageHeader";
 
 function Home() {
@@ -7,7 +8,7 @@ function Home() {
         title="Responsive Font Sizing"
         description="Make your font-size responsive with this clamp generator 📏"
       />
-      <section></section>
+      <ClampConvertion />
     </main>
   );
 }

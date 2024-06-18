@@ -16,7 +16,7 @@
   --clr-green-400: hsl(155, 76%, 72%);
 
   --body-fs: 1.3rem;
-  --title-fs: clamp(2.5rem, 2.0229rem + 2.0356vw, 3rem);
+  --title-fs: clamp(1.875rem, 0.8015rem + 4.5802vw, 3rem);
   --input-fs: 1rem;
 }
 
@@ -90,6 +90,15 @@ li {
   border-width: 0;
 }
 
+.my-toast {
+  background-color: var(--clr-green-400);
+  color: var(--clr-black-600);
+  font-weight: 700;
+  border: transparent;
+  text-align: center;
+  right: 0;
+}
+
 .app-container {
   --space: 3rem;
 
@@ -98,6 +107,10 @@ li {
 }
 
 @media (min-width: 48rem) {
+  .my-toast {
+    max-width: fit-content;
+  }
+
   .app-container {
     --space: 4rem;
   }

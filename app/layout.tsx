@@ -2,10 +2,11 @@ import { cookies } from "next/headers";
 import Link from "next/link";
 import { DARK_THEME, LIGHT_THEME } from "@/utils/colors";
 import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
-// import { Header, SchemeToggle } from '@/components';
+import { Space_Mono, Mulish } from "next/font/google";
 import Header from "../components/header/header";
 import SchemeToggle from "../components/schemeToggle/schemeToggle";
+// import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/sonner";
 import styles from "./page.module.css";
 import "./globals.css";
 
@@ -13,6 +14,8 @@ const spaceMono = Space_Mono({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
+
+const mulish = Mulish({ subsets: ["latin"], weight: ["700"] });
 
 export const metadata: Metadata = {
   title: "Jean - DevKit",
@@ -31,6 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en" data-color-theme={theme} style={themeColors}>
       <body className={spaceMono.className}>
+        <Toaster
+          visibleToasts={1}
+          duration={2000}
+          position="top-right"
+          className={mulish.className}
+        />
         <Header>
           <Link href="/" className={styles.logoLink}>
             <svg

@@ -1,16 +1,13 @@
-import { Mulish } from "next/font/google";
-import styles from "./page.module.css";
 import PxConvertion from "@/components/pxConvertion/pxConvertion";
-
-const mulish = Mulish({ subsets: ["latin"], weight: ["700"] });
+import PageHeader from "@/components/pageHeader/pageHeader";
 
 function Home() {
   return (
-    <main className={`app-container ${styles.main}`}>
-      <header className={styles.wrapper}>
-        <h1 className={mulish.className}> PX converter</h1>
-        <p>Convert your px values to any option available.</p>
-      </header>
+    <main className="app-container">
+      <PageHeader
+        title="PX converter"
+        description="Convert your px values to any option available."
+      />
       <PxConvertion />
     </main>
   );

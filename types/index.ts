@@ -11,3 +11,8 @@ export interface ThemeColors {
 export interface InitialThemeProps {
   initialTheme: string;
 }
+
+export interface PageHeaderProps {
+  title: string;
+  description?: string;
+}

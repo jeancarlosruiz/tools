@@ -6,7 +6,7 @@ import { Space_Mono } from "next/font/google";
 // import { Header, SchemeToggle } from '@/components';
 import Header from "../components/header/header";
 import SchemeToggle from "../components/schemeToggle/schemeToggle";
-import styles from "./px-converter/page.module.css";
+import styles from "./page.module.css";
 import "./globals.css";
 
 const spaceMono = Space_Mono({
@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en" data-color-theme={theme} style={themeColors}>
       <body className={spaceMono.className}>
         <Header>
-          <Link href="/" className={styles.link}>
+          <Link href="/" className={styles.logoLink}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"

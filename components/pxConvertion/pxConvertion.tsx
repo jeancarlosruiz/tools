@@ -84,27 +84,27 @@ const PxConvertion = () => {
 
   return (
     <section className={styles.section}>
-      <header className={styles.sectionHeader}>
-        <div className={styles.rootBox}>
-          <Label htmlFor="root-input">
-            <strong>Root:</strong>
+      {/* <header className={styles.sectionHeader}> */}
+      <div className={styles.rootBox}>
+        <Label htmlFor="root-input">
+          <strong>Root:</strong>
+        </Label>
+        <div className={styles.inputWrapper}>
+          <Label htmlFor="root-input" className={styles.label}>
+            <strong>px</strong>
           </Label>
-          <div className={styles.inputWrapper}>
-            <Label htmlFor="root-input" className={styles.label}>
-              <strong>px</strong>
-            </Label>
-            <Input
-              type="number"
-              id="root-input"
-              value={root}
-              onChange={(e) => setRoot(e.target.value)}
-              onBlur={(e) => handleOnBlur(e.target.value)}
-              className={styles.rootInput}
-            />
-          </div>
+          <Input
+            type="number"
+            id="root-input"
+            value={root}
+            onChange={(e) => setRoot(e.target.value)}
+            onBlur={(e) => handleOnBlur(e.target.value)}
+            className={styles.rootInput}
+          />
         </div>
-      </header>
-      <div className={styles.flexWrapper}>
+      </div>
+      {/* </header> */}
+      <div className={styles.wrapper}>
         <div className={styles.inputWrapper}>
           <Select
             value={toBeConverted}
@@ -131,21 +131,21 @@ const PxConvertion = () => {
               </SelectItem>
             </SelectContent>
           </Select>
-          <div className={styles.inputWrapper}>
-            {/* Poner el valor elejido */}
-            <Label htmlFor="conveter-input" className="visually-hidden">
-              <strong>px</strong>
-            </Label>
-            <Input
-              id="conveter-input"
-              type="number"
-              value={unitValue}
-              onChange={(e) => setUnitValue(e.target.value)}
-              onKeyDown={justNumbersFn}
-              className={styles.input}
-              disabled={false}
-            />
-          </div>
+          {/* <div className={styles.inputWrapper}> */}
+          {/* Poner el valor elejido */}
+          <Label htmlFor="conveter-input" className="visually-hidden">
+            <strong>Value</strong>
+          </Label>
+          <Input
+            id="conveter-input"
+            type="number"
+            value={unitValue}
+            onChange={(e) => setUnitValue(e.target.value)}
+            // onKeyDown={justNumbersFn}
+            className={styles.input}
+            disabled={false}
+          />
+          {/* </div> */}
         </div>
         <Button
           size="icon"
@@ -163,7 +163,7 @@ const PxConvertion = () => {
             <path d="M5.22 14.78a.75.75 0 0 0 1.06-1.06L4.56 12h8.69a.75.75 0 0 0 0-1.5H4.56l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3a.75.75 0 0 0 0 1.06l3 3Zm5.56-6.5a.75.75 0 1 1-1.06-1.06l1.72-1.72H2.75a.75.75 0 0 1 0-1.5h8.69L9.72 2.28a.75.75 0 0 1 1.06-1.06l3 3a.75.75 0 0 1 0 1.06l-3 3Z"></path>
           </svg>
         </Button>
-        <div className={styles.inputWrapper}>
+        <div className={styles.resultWrapper}>
           <Select
             value={convertedSelected}
             onValueChange={(value) => {
@@ -171,7 +171,7 @@ const PxConvertion = () => {
               calcResult();
             }}
           >
-            <SelectTrigger className={styles.selectTrigger}>
+            <SelectTrigger className={styles.selectTriggerResult}>
               <SelectValue placeholder="Select a convertion" />
             </SelectTrigger>
             <SelectContent className={styles.selectContent}>
@@ -189,31 +189,29 @@ const PxConvertion = () => {
               </SelectItem>
             </SelectContent>
           </Select>
-          <div className={styles.inputWrapper}>
-            <Label htmlFor="result-input" className="visually-hidden">
-              <strong>px</strong>
-            </Label>
-            <Button
-              size="icon"
-              className={`${styles.button} ${styles.copyIcon}`}
-              onClick={copyToClipboard}
+          <Button
+            size="icon"
+            className={`${styles.button} ${styles.copyBtn}`}
+            onClick={copyToClipboard}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              width="20"
+              height="20"
+              role="img"
+              className={styles.svg}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                width="20"
-                height="20"
-                role="img"
-                className={styles.svg}
-              >
-                <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path>
-                <path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-              </svg>
-            </Button>
-            <div className={styles.input}>
-              <span className={styles.span}>{result}</span>
-            </div>
-          </div>
+              <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path>
+              <path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+            </svg>
+          </Button>
+          {/* <div className={styles.inputWrapper}> */}
+          <Label htmlFor="result-input" className="visually-hidden">
+            <strong>Value converted</strong>
+          </Label>
+          <span className={styles.valueResult}>{result}</span>
+          {/* </div> */}
         </div>
       </div>
     </section>

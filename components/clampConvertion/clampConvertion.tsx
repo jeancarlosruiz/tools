@@ -155,7 +155,7 @@ const ClampConvertion = () => {
             type="number"
             value={minWidth}
             onChange={(e) => setMinWidth(e.target.value)}
-            onKeyDown={justNumbersFn}
+            // onKeyDown={justNumbersFn}
             className={styles.input}
           />
         </div>
@@ -188,7 +188,7 @@ const ClampConvertion = () => {
             type="number"
             value={minFontsize}
             onChange={(e) => setMinFontsize(e.target.value)}
-            onKeyDown={justNumbersFn}
+            // onKeyDown={justNumbersFn}
             className={styles.input}
           />
         </div>
@@ -223,7 +223,7 @@ const ClampConvertion = () => {
             type="number"
             value={maxWidth}
             onChange={(e) => setMaxWidth(e.target.value)}
-            onKeyDown={justNumbersFn}
+            // onKeyDown={justNumbersFn}
             className={styles.input}
           />
         </div>
@@ -256,7 +256,7 @@ const ClampConvertion = () => {
             type="number"
             value={maxFontsize}
             onChange={(e) => setMaxFontsize(e.target.value)}
-            onKeyDown={justNumbersFn}
+            // onKeyDown={justNumbersFn}
             className={styles.input}
           />
         </div>

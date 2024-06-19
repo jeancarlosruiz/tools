@@ -13,7 +13,7 @@
 }
 
 .button:focus-visible {
-  outline: 2px dashed var(--secondary-color);
+  outline: 2px solid var(--secondary-color);
 }
 
 .svg path {

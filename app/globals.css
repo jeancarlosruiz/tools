@@ -14,9 +14,9 @@
   --clr-green-600: hsl(155, 100%, 43%);
   --clr-green-500: hsl(155, 76%, 60%);
   --clr-green-400: hsl(155, 76%, 72%);
-  --clr-green-200: #DAD7CD;
+  --clr-green-200: #dad7cd;
 
-  --body-fs: 1.3rem;
+  --body-fs: 1rem;
   --title-fs: clamp(1.875rem, 0.8015rem + 4.5802vw, 3rem);
   --input-fs: 1rem;
 }
@@ -36,13 +36,14 @@ body {
   min-height: 100dvh;
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-size: var(--body-fs);
 }
 
 h1,
 h2,
 h3 {
   text-wrap: balance;
-  letter-spacing: -0.016rem;
+  /* letter-spacing: -0.016rem; */
 }
 
 /* Titles */
@@ -53,9 +54,6 @@ h1 {
 /* Body text */
 p {
   text-wrap: pretty;
-  letter-spacing: -0.25px;
-  /* font-size: var(--body-fs); */
-  font-size: 16px;
 }
 
 button {
@@ -119,7 +117,6 @@ li {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {

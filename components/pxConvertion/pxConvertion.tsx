@@ -38,6 +38,7 @@ const PxConvertion = () => {
     const convertionKey = `${toBeConverted}:${convertedSelected}`;
 
     const converFunction = convertionFunctions[convertionKey];
+    if (!converFunction) return;
 
     setResult(converFunction(rootValue, value).toString());
   }, [root, unitValue, toBeConverted, convertedSelected]);

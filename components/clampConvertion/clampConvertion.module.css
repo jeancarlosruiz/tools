@@ -4,7 +4,7 @@
   padding-block-start: 48px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, auto);
+  grid-template-rows: repeat(6, auto);
   gap: var(--gap);
 }
 
@@ -153,6 +153,21 @@
   border: 2px solid var(--border-color);
 }
 
+.rootInput {
+  max-width: 5rem;
+  background-color: var(--bg-input);
+  border: transparent;
+  padding-inline: 10px;
+  padding-block: 14px;
+  border-radius: 10px;
+  color: var(--text-color);
+
+  font-size: var(--input-fs);
+  font-weight: 700;
+  border: 2px solid var(--border-color);
+  caret-color: var(--secondary-color);
+}
+
 .input[type="number"]::-webkit-inner-spin-button,
 .input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -223,8 +238,6 @@
 }
 
 .copyBtn {
-  /* width: 1.25rem;
-  height: 1.25rem; */
   display: inline-flex;
   align-items: center;
 
@@ -235,27 +248,27 @@
   margin-inline-start: auto;
 }
 
-.copyIcon {
-  /* padding-block: 10px;
-  padding-inline-end: 15px; */
+.rootBox {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 0.5rem;
+  grid-column: 1 / -1;
+  /* justify-self: center; */
 }
-
-/* .clampResult {
-  --width: 274px;
-  display: inline-block;
-  width: var(--width);
-  overflow-x: scroll;
-  white-space: nowrap;
-} */
 
 @media (min-width: 48rem) {
   .section {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
   }
 
   .resultWrapper {
     grid-column: 1 / 3;
+  }
+
+  .rootBox {
+    justify-self: self-start;
   }
 }
 

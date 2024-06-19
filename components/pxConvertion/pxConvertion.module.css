@@ -27,8 +27,8 @@
 }
 
 .rootBox {
-  margin-block-start: 10px;
-  margin-block-end: 15px;
+  /* margin-block-start: 10px;
+  margin-block-end: 15px; */
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -44,7 +44,6 @@
 
 .switchBtn {
   width: 100%;
-
 }
 
 .button,
@@ -62,7 +61,8 @@
 }
 
 .button:focus-visible {
-  outline: 2px dashed var(--secondary-color);
+  /* outline: 2px dashed var(--secondary-color); */
+  outline: transparent;
 }
 
 .selectTrigger {
@@ -82,7 +82,8 @@
 }
 
 .selectTrigger:focus-visible {
-  outline: 2px dashed var(--secondary-color);
+  /* outline: 2px dashed var(--secondary-color); */
+  outline: transparent;
 }
 
 .selectTrigger svg {

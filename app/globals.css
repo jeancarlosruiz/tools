@@ -14,6 +14,7 @@
   --clr-green-600: hsl(155, 100%, 43%);
   --clr-green-500: hsl(155, 76%, 60%);
   --clr-green-400: hsl(155, 76%, 72%);
+  --clr-green-200: #DAD7CD;
 
   --body-fs: 1.3rem;
   --title-fs: clamp(1.875rem, 0.8015rem + 4.5802vw, 3rem);
@@ -97,6 +98,7 @@ li {
   border: transparent;
   text-align: center;
   right: 0;
+  gap: 0;
 }
 
 .app-container {
@@ -117,6 +119,7 @@ li {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

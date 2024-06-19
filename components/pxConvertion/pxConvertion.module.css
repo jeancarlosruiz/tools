@@ -42,7 +42,13 @@
   fill: var(--text-color);
 }
 
-.button {
+.switchBtn {
+  width: 100%;
+
+}
+
+.button,
+.switchBtn {
   height: fit-content;
   display: inline-flex;
   align-items: center;
@@ -119,7 +125,7 @@
 .flexWrapper {
   width: fit-content;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
@@ -128,6 +134,7 @@
 }
 
 .inputWrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -152,6 +159,7 @@
 }
 
 .input {
+  max-width: 12rem;
   min-height: 3.25rem;
   background-color: var(--bg-input);
   border: transparent;
@@ -164,6 +172,10 @@
 
   border: 2px solid var(--border-color);
   caret-color: var(--secondary-color);
+}
+
+.input:read-only {
+  cursor: default;
 }
 
 .input:read-only:focus-visible {
@@ -186,6 +198,7 @@
   -moz-appearance: textfield;
   /* Firefox */
 }
+
 .rootInput[type="number"] {
   -moz-appearance: textfield;
   /* Firefox */
@@ -229,6 +242,12 @@
 .tooltipContent small {
   font-size: 0.75rem;
   line-height: 2;
+}
+
+.span {
+  display: block;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 @media (min-width: 48rem) {

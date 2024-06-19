@@ -58,7 +58,7 @@
 }
 
 .selectTrigger:focus-visible {
-  outline: 2px dashed var(--secondary-color);
+  outline: 2px solid transparent;
 }
 
 .selectTrigger svg {
@@ -169,6 +169,7 @@
   -moz-appearance: textfield;
   /* Firefox */
 }
+
 .rootInput[type="number"] {
   -moz-appearance: textfield;
   /* Firefox */
@@ -203,7 +204,7 @@
 }
 
 .clampResultWrapper {
-  min-height: 3.4rem;
+  min-height: 3.5rem;
   background-color: var(--bg-input);
   border: transparent;
   padding-inline: 10px;

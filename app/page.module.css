@@ -16,7 +16,8 @@
 .navegation .link {
   padding-inline: 10px;
   padding-block: 20px;
-  border: 4px dashed var(--border-color);
+  /* border: 4px dashed var(--border-color); */
+  background-color: var(--bg-input);
   border-radius: 10px;
 
   font-size: 1.2rem;

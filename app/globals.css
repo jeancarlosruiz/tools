@@ -34,10 +34,13 @@
 
 body {
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg-color);
   color: var(--text-color);
   font-size: var(--body-fs);
 }
+
 
 h1,
 h2,
@@ -117,6 +120,7 @@ li {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

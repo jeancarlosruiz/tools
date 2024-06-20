@@ -41,10 +41,16 @@
   fill: var(--text-color);
 }
 
+.switchBtn {
+  width: 5rem;
+  height: 5rem;
+}
+
 .button,
 .switchBtn {
   height: fit-content;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
 
   background-color: transparent;
@@ -181,6 +187,7 @@
 }
 
 .input {
+  min-height: 50px;
   background-color: var(--bg-input);
   border: none;
   padding-inline: 10px;
@@ -305,8 +312,8 @@
   caret-color: var(--secondary-color);
 }
 
-/* @media (min-width: 48rem) {
+@media (min-width: 48rem) {
   .wrapper {
     flex-direction: row;
   }
-} */
+}

@@ -23,7 +23,6 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-  pathname: any;
 }>) {
   const savedTheme = cookies().get('color-theme');
   const theme = savedTheme?.value || 'dark';

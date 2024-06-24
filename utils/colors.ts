@@ -8,6 +8,7 @@ export const LIGHT_THEME: ThemeColors = {
   '--accent-color': 'var(--clr-blue-100)',
   '--border-color': 'var(--clr-black-400)',
   '--bg-input': 'var(--clr-white-500)',
+  '--select-item-hover': 'var(--clr-white-600)',
 };
 
 export const DARK_THEME: ThemeColors = {
@@ -18,4 +19,5 @@ export const DARK_THEME: ThemeColors = {
   '--accent-color': 'var(--clr-green-500)',
   '--border-color': 'var(--clr-black-400)',
   '--bg-input': 'var(--clr-black-700)',
+  '--select-item-hover': 'var(--clr-black-500)',
 };

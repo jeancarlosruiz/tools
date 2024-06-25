@@ -8,6 +8,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import styles from './customInput.module.css';
+import { uniqueID } from '@/utils/helpers';
 
 function CustomInput({
   id,
@@ -23,7 +24,7 @@ function CustomInput({
       <Input
         id={id}
         value={inputValue}
-        onClick={inputOnchange}
+        onChange={inputOnchange}
         type='number'
         className={styles.input}
       />
@@ -33,11 +34,14 @@ function CustomInput({
         </SelectTrigger>
         <SelectContent className={styles.selectContent}>
           {selectItemsArr &&
-            selectItemsArr.map((el) => (
-              <SelectItem key={el} value={el} className={styles.selectItem}>
-                {el}
-              </SelectItem>
-            ))}
+            selectItemsArr.map((el) => {
+              const id = uniqueID();
+              return (
+                <SelectItem key={id} value={el} className={styles.selectItem}>
+                  {el}
+                </SelectItem>
+              );
+            })}
         </SelectContent>
       </Select>
       {children}

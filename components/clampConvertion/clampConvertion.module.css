@@ -47,6 +47,10 @@
   padding-inline-end: 10px;
 }
 
+.rootWrapper {
+  position: relative;
+}
+
 .rootInput {
   max-width: 5rem;
   background-color: var(--bg-input);

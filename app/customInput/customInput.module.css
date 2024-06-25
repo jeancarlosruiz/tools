@@ -1,9 +1,9 @@
 .inputWrapper {
-    --outer-br: 6px;
-    --padding-inline: 10px;
+    --outer-br: 12px;
+    --padding-inline: 8px;
     --padding-block: 10px;
 
-    min-height: 3.625rem;
+    min-height: 3rem;
     width: 100%;
     background-color: var(--bg-input);
     padding-block: var(--padding-block);
@@ -37,7 +37,7 @@
 }
 
 .selectTrigger {
-    --inner-br: calc(var(--padding-inline) - var(--outer-br));
+    --inner-br: calc(var(--padding-inline) * .75);
 
     display: flex;
     align-items: center;

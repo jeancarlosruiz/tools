@@ -1,20 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import copy from 'copy-to-clipboard';
-import { justNumbersFn } from '@/utils/helpers';
-
 import styles from './clampConvertion.module.css';
 import CustomInput from '@/app/customInput/customInput';
 
@@ -116,7 +106,7 @@ const ClampConvertion = () => {
         <Label htmlFor='root-input'>
           <strong>Root:</strong>
         </Label>
-        <div className={styles.inputWrapper}>
+        <div className={styles.rootWrapper}>
           <Label htmlFor='root-input' className={styles.label}>
             <strong>px</strong>
           </Label>
@@ -145,7 +135,7 @@ const ClampConvertion = () => {
           }}
           selectItemsArr={SELECT_ITEMS_VALUES}
         />
-        <Label htmlFor='min-width--input'>
+        <Label>
           <strong>Min font-size:</strong>
         </Label>
         <CustomInput
@@ -161,7 +151,7 @@ const ClampConvertion = () => {
         />
       </div>
       <div className={styles.wrapper}>
-        <Label htmlFor='min-width--input'>
+        <Label>
           <strong>Max viewport width:</strong>
         </Label>
         <CustomInput
@@ -175,7 +165,7 @@ const ClampConvertion = () => {
           }}
           selectItemsArr={SELECT_ITEMS_VALUES}
         />
-        <Label htmlFor='min-width--input'>
+        <Label>
           <strong>Max font-size:</strong>
         </Label>
         <CustomInput

@@ -37,6 +37,11 @@
   fill: var(--text-color);
 }
 
+.test {
+  width: 96px;
+  height: 96px;
+}
+
 .switchIcon path {
   fill: var(--text-color);
 }

@@ -1,21 +1,14 @@
 'use client';
 import { useEffect, useState } from 'react';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import copy from 'copy-to-clipboard';
-import { justNumbersFn } from '@/utils/helpers';
-
 import styles from './clampConvertion.module.css';
+import CustomInput from '@/app/customInput/customInput';
+
+const SELECT_ITEMS_VALUES = ['px', 'rem'];
 
 const ClampConvertion = () => {
   const [minWidthUnit, setMinWidthUnit] = useState<string>('px');
@@ -113,7 +106,7 @@ const ClampConvertion = () => {
         <Label htmlFor='root-input'>
           <strong>Root:</strong>
         </Label>
-        <div className={styles.inputWrapper}>
+        <div className={styles.rootWrapper}>
           <Label htmlFor='root-input' className={styles.label}>
             <strong>px</strong>
           </Label>
@@ -128,142 +121,65 @@ const ClampConvertion = () => {
         </div>
       </div>
       <div className={styles.wrapper}>
-        <div className={styles.inputWrapper}>
-          <Select
-            value={minWidthUnit}
-            onValueChange={(e) => {
-              setMinWidthUnit(e);
-              const newValue = switchValueFn(e, minWidth);
-              setMinWidth(newValue);
-            }}
-          >
-            <SelectTrigger className={styles.selectTrigger}>
-              <SelectValue placeholder='Select a convertion' />
-            </SelectTrigger>
-            <SelectContent className={styles.selectContent}>
-              <SelectItem value='px' className={styles.selectItem}>
-                px
-              </SelectItem>
-              <SelectItem value='rem' className={styles.selectItem}>
-                rem
-              </SelectItem>
-            </SelectContent>
-          </Select>
-          <Label htmlFor='min-width--input'>
-            <strong>Min width:</strong>
-          </Label>
-          <Input
-            id='min-width--input'
-            type='number'
-            value={minWidth}
-            onChange={(e) => setMinWidth(e.target.value)}
-            // onKeyDown={justNumbersFn}
-            className={styles.input}
-          />
-        </div>
-        <div className={styles.inputWrapper}>
-          <Select
-            value={minFontsizeUnit}
-            onValueChange={(e) => {
-              setMinFontsizeUnit(e);
-              const newValue = switchValueFn(e, minFontsize);
-              setMinFontsize(newValue);
-            }}
-          >
-            <SelectTrigger className={styles.selectTrigger}>
-              <SelectValue placeholder='Select a convertion' />
-            </SelectTrigger>
-            <SelectContent className={styles.selectContent}>
-              <SelectItem value='px' className={styles.selectItem}>
-                px
-              </SelectItem>
-              <SelectItem value='rem' className={styles.selectItem}>
-                rem
-              </SelectItem>
-            </SelectContent>
-          </Select>
-          <Label htmlFor='min-width--input'>
-            <strong>Min font-size:</strong>
-          </Label>
-          <Input
-            id='max-width--input'
-            type='number'
-            value={minFontsize}
-            onChange={(e) => setMinFontsize(e.target.value)}
-            // onKeyDown={justNumbersFn}
-            className={styles.input}
-          />
-        </div>
+        <Label htmlFor='min-width--input'>
+          <strong>Min width:</strong>
+        </Label>
+        <CustomInput
+          inputValue={minWidth}
+          inputOnchange={(e) => setMinWidth(e.target.value)}
+          selectValue={minWidthUnit}
+          selectOnchange={(e) => {
+            setMinWidthUnit(e);
+            const newValue = switchValueFn(e, minWidth);
+            setMinWidth(newValue);
+          }}
+          selectItemsArr={SELECT_ITEMS_VALUES}
+        />
+        <Label>
+          <strong>Min font-size:</strong>
+        </Label>
+        <CustomInput
+          inputValue={minFontsize}
+          inputOnchange={(e) => setMinFontsize(e.target.value)}
+          selectValue={minFontsizeUnit}
+          selectOnchange={(e) => {
+            setMinFontsizeUnit(e);
+            const newValue = switchValueFn(e, minFontsize);
+            setMinFontsize(newValue);
+          }}
+          selectItemsArr={SELECT_ITEMS_VALUES}
+        />
       </div>
       <div className={styles.wrapper}>
-        <div className={styles.inputWrapper}>
-          <Select
-            value={maxWidthUnit}
-            onValueChange={(e) => {
-              setMaxWidthUnit(e);
-              const newValue = switchValueFn(e, maxWidth);
-              setMaxWidth(newValue);
-            }}
-          >
-            <SelectTrigger className={styles.selectTrigger}>
-              <SelectValue placeholder='Select a convertion' />
-            </SelectTrigger>
-            <SelectContent className={styles.selectContent}>
-              <SelectItem value='px' className={styles.selectItem}>
-                px
-              </SelectItem>
-              <SelectItem value='rem' className={styles.selectItem}>
-                rem
-              </SelectItem>
-            </SelectContent>
-          </Select>
-          <Label htmlFor='min-width--input'>
-            <strong>Max viewport width:</strong>
-          </Label>
-          <Input
-            id='min-width--input'
-            type='number'
-            value={maxWidth}
-            onChange={(e) => setMaxWidth(e.target.value)}
-            // onKeyDown={justNumbersFn}
-            className={styles.input}
-          />
-        </div>
-        <div className={styles.inputWrapper}>
-          <Select
-            value={maxFontsizeUnit}
-            onValueChange={(e) => {
-              setMaxFontsizeUnit(e);
-              const newValue = switchValueFn(e, maxFontsize);
-              setMaxFontsize(newValue);
-            }}
-          >
-            <SelectTrigger className={styles.selectTrigger}>
-              <SelectValue placeholder='Select a convertion' />
-            </SelectTrigger>
-            <SelectContent className={styles.selectContent}>
-              <SelectItem value='px' className={styles.selectItem}>
-                px
-              </SelectItem>
-              <SelectItem value='rem' className={styles.selectItem}>
-                rem
-              </SelectItem>
-            </SelectContent>
-          </Select>
-          <Label htmlFor='min-width--input'>
-            <strong>Max font-size:</strong>
-          </Label>
-          <Input
-            id='min-width--input'
-            type='number'
-            value={maxFontsize}
-            onChange={(e) => setMaxFontsize(e.target.value)}
-            // onKeyDown={justNumbersFn}
-            className={styles.input}
-          />
-        </div>
+        <Label>
+          <strong>Max viewport width:</strong>
+        </Label>
+        <CustomInput
+          inputValue={maxWidth}
+          inputOnchange={(e) => setMaxWidthUnit(e.target.value)}
+          selectValue={maxWidthUnit}
+          selectOnchange={(e) => {
+            setMaxWidthUnit(e);
+            const newValue = switchValueFn(e, maxWidth);
+            setMaxWidth(newValue);
+          }}
+          selectItemsArr={SELECT_ITEMS_VALUES}
+        />
+        <Label>
+          <strong>Max font-size:</strong>
+        </Label>
+        <CustomInput
+          inputValue={maxFontsize}
+          inputOnchange={(e) => setMaxFontsize(e.target.value)}
+          selectValue={maxWidthUnit}
+          selectOnchange={(e) => {
+            setMaxFontsizeUnit(e);
+            const newValue = switchValueFn(e, maxFontsize);
+            setMaxFontsize(newValue);
+          }}
+          selectItemsArr={SELECT_ITEMS_VALUES}
+        />
       </div>
-
       <div className={styles.resultWrapper}>
         <Label htmlFor='result-input'>
           <strong>Font-size:</strong>

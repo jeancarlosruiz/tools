@@ -6,10 +6,12 @@
   --clr-black-800: hsl(193, 100%, 7%);
   --clr-black-700: hsl(193, 96%, 11%);
   --clr-black-600: hsl(193, 100%, 13%);
+  --clr-black-500: hsla(193, 96%, 11%, 0.2);
   --clr-black-400: hsl(193, 98%, 21%);
   --clr-blue-100: hsl(194, 53%, 73%);
   --clr-white-400: hsl(210, 40%, 98%);
   --clr-white-500: hsl(240, 5%, 96%);
+  --clr-white-600: hsla(240, 5%, 96%, 0.5);
   --clr-green-700: hsl(165, 87%, 28%);
   --clr-green-600: hsl(155, 100%, 43%);
   --clr-green-500: hsl(155, 76%, 60%);

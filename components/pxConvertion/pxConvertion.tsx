@@ -9,12 +9,14 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { toast } from 'sonner';
-import { justNumbersFn } from '@/utils/helpers';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { convertionFunctions } from '@/utils/convertions';
 import styles from './pxConvertion.module.css';
+import CustomInput from '@/app/customInput/customInput';
+
+const SELECT_ITEMS_VALUES = ['px', 'rem', 'em', '%'];
 
 const PxConvertion = () => {
   const [root, setRoot] = useState<string>('16');
@@ -83,7 +85,6 @@ const PxConvertion = () => {
 
   return (
     <section className={styles.section}>
-      {/* <header className={styles.sectionHeader}> */}
       <div className={styles.rootBox}>
         <Label htmlFor='root-input'>
           <strong>Root:</strong>
@@ -102,50 +103,17 @@ const PxConvertion = () => {
           />
         </div>
       </div>
-      {/* </header> */}
       <div className={styles.wrapper}>
-        <div className={styles.inputWrapper}>
-          <Select
-            value={toBeConverted}
-            onValueChange={(value) => {
-              setToBeConverted(value);
-              calcResult();
-            }}
-          >
-            <SelectTrigger className={styles.selectTrigger}>
-              <SelectValue placeholder='Select a convertion' />
-            </SelectTrigger>
-            <SelectContent className={styles.selectContent}>
-              <SelectItem value='px' className={styles.selectItem}>
-                px
-              </SelectItem>
-              <SelectItem value='rem' className={styles.selectItem}>
-                rem
-              </SelectItem>
-              <SelectItem value='em' className={styles.selectItem}>
-                em
-              </SelectItem>
-              <SelectItem value='%' className={styles.selectItem}>
-                Percentage
-              </SelectItem>
-            </SelectContent>
-          </Select>
-          {/* <div className={styles.inputWrapper}> */}
-          {/* Poner el valor elejido */}
-          <Label htmlFor='conveter-input' className='visually-hidden'>
-            <strong>Value</strong>
-          </Label>
-          <Input
-            id='conveter-input'
-            type='number'
-            value={unitValue}
-            onChange={(e) => setUnitValue(e.target.value)}
-            // onKeyDown={justNumbersFn}
-            className={styles.input}
-            disabled={false}
-          />
-          {/* </div> */}
-        </div>
+        <CustomInput
+          inputValue={unitValue}
+          inputOnchange={(e) => setUnitValue(e.target.value)}
+          selectValue={toBeConverted}
+          selectOnchange={(value) => {
+            setToBeConverted(value);
+            calcResult();
+          }}
+          selectItemsArr={SELECT_ITEMS_VALUES}
+        />
         <Button
           size='icon'
           className={styles.switchBtn}
@@ -205,12 +173,10 @@ const PxConvertion = () => {
               <path d='M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z'></path>
             </svg>
           </Button>
-          {/* <div className={styles.inputWrapper}> */}
           <Label htmlFor='result-input' className='visually-hidden'>
             <strong>Value converted</strong>
           </Label>
           <span className={styles.valueResult}>{result}</span>
-          {/* </div> */}
         </div>
       </div>
     </section>

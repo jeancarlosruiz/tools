@@ -14,7 +14,7 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { convertionFunctions } from '@/utils/convertions';
 import styles from './pxConvertion.module.css';
-import CustomInput from '@/app/customInput/customInput';
+import CustomInput from '@/components/customInput/customInput';
 
 const SELECT_ITEMS_VALUES = ['px', 'rem', 'em', '%'];
 

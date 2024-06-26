@@ -95,10 +95,10 @@
 }
 
 .selectTriggerResult {
+  width: 5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  max-width: fit-content;
   font-weight: 700;
 
   padding-block: 7px;

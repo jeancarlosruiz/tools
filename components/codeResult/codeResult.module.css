@@ -1,0 +1,46 @@
+.clampResultWrapper {
+    min-height: 3.5rem;
+    background-color: var(--bg-input);
+    border: transparent;
+    padding-inline: 10px;
+    padding-block: 14px;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: var(--input-fs);
+    caret-color: var(--secondary-color);
+
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+.copyBtn {
+    display: inline-flex;
+    align-items: center;
+
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-inline-start: auto;
+    padding-inline: 5px;
+    padding-block: 5px;
+
+    margin-inline-end: -5px;
+}
+
+.svg path {
+    fill: var(--text-color);
+}
+
+
+.copyBtn:focus-visible {
+    outline: 2px solid var(--secondary-color);
+}
+
+@media (min-width: 48rem) {
+    .resultWrapper {
+        grid-column: 1 / 3;
+    }
+}

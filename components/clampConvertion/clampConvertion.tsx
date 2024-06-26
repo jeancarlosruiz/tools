@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import copy from 'copy-to-clipboard';
 import styles from './clampConvertion.module.css';
-import CustomInput from '@/app/customInput/customInput';
+import CustomInput from '@/components/customInput/customInput';
+import CodeResult from '../codeResult/codeResult';
 
 const SELECT_ITEMS_VALUES = ['px', 'rem'];
 
@@ -180,7 +181,8 @@ const ClampConvertion = () => {
           selectItemsArr={SELECT_ITEMS_VALUES}
         />
       </div>
-      <div className={styles.resultWrapper}>
+      <CodeResult clamp={clamp} />
+      {/* <div className={styles.resultWrapper}>
         <Label htmlFor='result-input'>
           <strong>Font-size:</strong>
         </Label>
@@ -204,7 +206,7 @@ const ClampConvertion = () => {
             </svg>
           </Button>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

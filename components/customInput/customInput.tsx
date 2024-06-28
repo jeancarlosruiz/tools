@@ -1,14 +1,16 @@
-import { CustomInputProps } from '@/types';
-import { Input } from '@/components/ui/input';
+import { useId } from "react";
+import { CustomInputProps } from "@/types";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import styles from './customInput.module.css';
-import { uniqueID } from '@/utils/helpers';
+} from "@/components/ui/select";
+import { uniqueID } from "@/utils/helpers";
+import styles from "./customInput.module.css";
+import { Label } from "../ui/label";
 
 function CustomInput({
   id,
@@ -19,18 +21,28 @@ function CustomInput({
   selectItemsArr,
   children,
 }: CustomInputProps) {
+  const reactID = useId();
+  const selectId = `${reactID}-select-unit`;
+
   return (
     <div className={styles.inputWrapper}>
       <Input
         id={id}
+        type="number"
         value={inputValue}
         onChange={inputOnchange}
-        type='number'
         className={styles.input}
       />
+      <Label htmlFor={selectId} className="visually-hidden">
+        Unit select
+      </Label>
       <Select value={selectValue} onValueChange={selectOnchange}>
-        <SelectTrigger className={styles.selectTrigger}>
-          <SelectValue placeholder='Select a convertion' />
+        <SelectTrigger
+          id={selectId}
+          name="unit-select"
+          className={styles.selectTrigger}
+        >
+          <SelectValue placeholder="Select a convertion" />
         </SelectTrigger>
         <SelectContent className={styles.selectContent}>
           {selectItemsArr &&

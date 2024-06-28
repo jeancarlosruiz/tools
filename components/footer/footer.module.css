@@ -1,35 +1,36 @@
 .footer {
-    padding-block: 20px;
-    margin-block-start: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .8rem;
+  padding-block: 20px;
+  margin-block-start: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
 }
 
 .footer span {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--primary-color);
-
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .navegation {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .link {
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
 }
 
 .link svg {
-    margin-inline-end: 6px;
+  margin-inline-end: 6px;
 }
 
 .link svg path {
-    stroke: var(--text-color);
+  stroke: var(--text-color);
 }
+
+/* Updating */

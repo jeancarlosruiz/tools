@@ -13,10 +13,8 @@
 
 .rootInput {
   max-width: 5rem;
-  background-color: var(--bg-input);
+  background-color: transparent;
   border: transparent;
-  padding-inline: 10px;
-  padding-block: 14px;
   border-radius: 10px;
   color: var(--text-color);
 
@@ -169,11 +167,15 @@
 .inputWrapper {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   gap: 0.5rem;
-
+  padding-inline: 14px;
+  padding-block: 14px;
   position: relative;
   color: var(--text-color);
+  background-color: var(--bg-input);
+  border-radius: 10px;
 }
 
 .label {
@@ -195,8 +197,8 @@
   min-height: 50px;
   background-color: var(--bg-input);
   border: none;
-  padding-inline: 10px;
-  padding-block: 14px;
+  /* padding-inline: 10px;
+  padding-block: 14px; */
   border-radius: 8px;
   color: var(--text-color);
   font-weight: 700;
@@ -208,9 +210,9 @@
   cursor: default;
 }
 
-.input:read-only:focus-visible {
+/* .input:read-only:focus-visible {
   outline: 2px solid var(--border-color);
-}
+} */
 
 .input[type="number"]::-webkit-inner-spin-button,
 .input[type="number"]::-webkit-outer-spin-button {
@@ -236,7 +238,7 @@
 
 .input:focus-visible,
 .rootInput:focus-visible {
-  outline: 2px solid var(--secondary-color);
+  outline: transparent;
 }
 
 .alignCenter {

@@ -87,9 +87,6 @@ const PxConvertion = () => {
           <strong>Root:</strong>
         </Label>
         <div className={styles.inputWrapper}>
-          <Label htmlFor="root-input" className={styles.label}>
-            <strong>px</strong>
-          </Label>
           <Input
             type="number"
             id="root-input"
@@ -98,10 +95,15 @@ const PxConvertion = () => {
             onBlur={(e) => handleOnBlur(e.target.value)}
             className={styles.rootInput}
           />
+          <span>
+            <strong>px</strong>
+          </span>
         </div>
       </div>
       <div className={styles.wrapper}>
-        <Label htmlFor="to-convert"></Label>
+        <Label htmlFor="to-convert" className="visually-hidden">
+          Value to be converted
+        </Label>
         <CustomInput
           id="to-convert"
           inputValue={unitValue}
@@ -115,6 +117,7 @@ const PxConvertion = () => {
         />
         <Button
           name="switch-btn"
+          aria-label="Switch values unit button"
           size="icon"
           className={styles.switchBtn}
           onClick={switchSelection}
@@ -143,6 +146,8 @@ const PxConvertion = () => {
           >
             <SelectTrigger
               id="select-unit"
+              name="unit-select"
+              aria-label="Unit Selection Button"
               className={styles.selectTriggerResult}
             >
               <SelectValue placeholder="Select a convertion" />
@@ -164,6 +169,7 @@ const PxConvertion = () => {
           </Select>
           <Button
             name="copy-to-clipboard-btn"
+            aria-label="Copy to clipboard button"
             size="icon"
             className={`${styles.button} ${styles.copyBtn}`}
             onClick={copyToClipboard}

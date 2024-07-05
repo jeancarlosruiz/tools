@@ -1,16 +1,16 @@
-import { useId } from "react";
-import { CustomInputProps } from "@/types";
-import { Input } from "@/components/ui/input";
+import { useId } from 'react'
+import { CustomInputProps } from '@/types'
+import { uniqueID } from '@/utils/helpers'
 import {
+  Label,
+  Input,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { uniqueID } from "@/utils/helpers";
-import styles from "./customInput.module.css";
-import { Label } from "../ui/label";
+} from '../ui/index'
+import styles from './customInput.module.css'
 
 function CustomInput({
   id,
@@ -21,8 +21,8 @@ function CustomInput({
   selectItemsArr,
   children,
 }: CustomInputProps) {
-  const reactID = useId();
-  const selectId = `${reactID}-select-unit`;
+  const reactID = useId()
+  const selectId = `${reactID}-select-unit`
 
   return (
     <div className={styles.inputWrapper}>
@@ -48,18 +48,18 @@ function CustomInput({
         <SelectContent className={styles.selectContent}>
           {selectItemsArr &&
             selectItemsArr.map((el) => {
-              const id = uniqueID();
+              const id = uniqueID()
               return (
                 <SelectItem key={id} value={el} className={styles.selectItem}>
                   {el}
                 </SelectItem>
-              );
+              )
             })}
         </SelectContent>
       </Select>
       {children}
     </div>
-  );
+  )
 }
 
-export default CustomInput;
+export default CustomInput

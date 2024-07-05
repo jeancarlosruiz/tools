@@ -1,15 +1,15 @@
-import copy from "copy-to-clipboard";
-import { Button } from "../ui/button";
-import { toast } from "sonner";
-import styles from "./codeResult.module.css";
+import copy from 'copy-to-clipboard'
+import { Button } from '../ui/index'
+import { toast } from 'sonner'
+import styles from './codeResult.module.css'
 
 const CodeResult = ({ clamp }: { clamp?: string }) => {
   const copyToClipboard = () => {
-    if (!clamp) return;
+    if (!clamp) return
 
-    copy(`${clamp}`);
-    toast("Copied to clipboard.", {
-      className: "my-toast",
+    copy(`${clamp}`)
+    toast('Copied to clipboard.', {
+      className: 'my-toast',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -24,8 +24,8 @@ const CodeResult = ({ clamp }: { clamp?: string }) => {
           ></path>
         </svg>
       ),
-    });
-  };
+    })
+  }
 
   return (
     <div className={styles.resultWrapper}>
@@ -52,7 +52,7 @@ const CodeResult = ({ clamp }: { clamp?: string }) => {
         </Button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CodeResult;
+export default CodeResult

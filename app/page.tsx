@@ -1,6 +1,6 @@
-import Link from "next/link";
-import styles from "./page.module.css";
-import PageHeader from "@/components/pageHeader/pageHeader";
+import Link from 'next/link'
+import styles from './page.module.css'
+import PageHeader from '@/components/pageHeader/pageHeader'
 
 export default function Home() {
   return (
@@ -14,8 +14,11 @@ export default function Home() {
           <Link href="/clamp" className={styles.link}>
             Responsive Font Sizing
           </Link>
+          <Link href="/js-playground" className={styles.link}>
+            Js Playground
+          </Link>
         </nav>
       </section>
     </main>
-  );
+  )
 }

@@ -1,64 +1,58 @@
-"use client";
-import { useState, useEffect } from "react";
-import copy from "copy-to-clipboard";
+'use client'
+import { useState, useEffect } from 'react'
+import { convertionFunctions } from '@/utils/convertions'
+import copy from 'copy-to-clipboard'
+import { toast } from 'sonner'
+import { handleOnBlur } from '@/utils/helpers'
 import {
+  Button,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { toast } from "sonner";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { convertionFunctions } from "@/utils/convertions";
-import styles from "./pxConvertion.module.css";
-import CustomInput from "@/components/customInput/customInput";
+  Label,
+} from '@/components/ui/index'
+import { Root, CustomInput } from '@/components/index'
+import styles from './pxConvertion.module.css'
 
-const SELECT_ITEMS_VALUES = ["px", "rem", "em", "%"];
+const SELECT_ITEMS_VALUES = ['px', 'rem', 'em', '%']
 
 const PxConvertion = () => {
-  const [root, setRoot] = useState<string>("16");
-  const [toBeConverted, setToBeConverted] = useState<string>("px");
-  const [unitValue, setUnitValue] = useState<string>("24");
-  const [convertedSelected, setConvertedSelected] = useState<string>("rem");
-  const [result, setResult] = useState<string>("");
-
-  const handleOnBlur = (value: string) => {
-    if (value === "0" || " ") {
-      setRoot("16");
-    }
-  };
+  const [root, setRoot] = useState<string>('16')
+  const [toBeConverted, setToBeConverted] = useState<string>('px')
+  const [unitValue, setUnitValue] = useState<string>('24')
+  const [convertedSelected, setConvertedSelected] = useState<string>('rem')
+  const [result, setResult] = useState<string>('')
 
   const calcResult = () => {
-    if (Number.isNaN(root) || Number.isNaN(unitValue)) return;
+    if (Number.isNaN(root) || Number.isNaN(unitValue)) return
 
-    const rootValue = Number(unitValue);
-    const value = Number(root);
-    const convertionKey = `${toBeConverted}:${convertedSelected}`;
+    const rootValue = Number(unitValue)
+    const value = Number(root)
+    const convertionKey = `${toBeConverted}:${convertedSelected}`
 
-    const converFunction = convertionFunctions[convertionKey];
-    if (!converFunction) return;
+    const converFunction = convertionFunctions[convertionKey]
+    if (!converFunction) return
 
-    setResult(converFunction(rootValue, value).toString());
-  };
+    setResult(converFunction(rootValue, value).toString())
+  }
 
   const switchSelection = () => {
-    const prev1 = toBeConverted;
-    const prev2 = convertedSelected;
+    const prev1 = toBeConverted
+    const prev2 = convertedSelected
 
-    setToBeConverted(prev2);
-    setConvertedSelected(prev1);
-    setUnitValue(result.toString());
-  };
+    setToBeConverted(prev2)
+    setConvertedSelected(prev1)
+    setUnitValue(result.toString())
+  }
 
   const copyToClipboard = () => {
-    if (result === "") return;
+    if (result === '') return
 
-    copy(`${result}${convertedSelected}`);
-    toast("Copied to clipboard.", {
-      className: "my-toast",
+    copy(`${result}${convertedSelected}`)
+    toast('Copied to clipboard.', {
+      className: 'my-toast',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -73,33 +67,20 @@ const PxConvertion = () => {
           ></path>
         </svg>
       ),
-    });
-  };
+    })
+  }
 
   useEffect(() => {
-    calcResult();
-  }, [root, unitValue, toBeConverted, convertedSelected, result]);
+    calcResult()
+  }, [root, unitValue, toBeConverted, convertedSelected, result])
 
   return (
     <section className={styles.section}>
-      <div className={styles.rootBox}>
-        <Label htmlFor="root-input">
-          <strong>Root:</strong>
-        </Label>
-        <div className={styles.inputWrapper}>
-          <Input
-            type="number"
-            id="root-input"
-            value={root}
-            onChange={(e) => setRoot(e.target.value)}
-            onBlur={(e) => handleOnBlur(e.target.value)}
-            className={styles.rootInput}
-          />
-          <span>
-            <strong>px</strong>
-          </span>
-        </div>
-      </div>
+      <Root
+        root={root}
+        onchange={(e) => setRoot(e.target.value)}
+        onblur={(e) => handleOnBlur(e.target.value, setRoot)}
+      />
       <div className={styles.wrapper}>
         <Label htmlFor="to-convert" className="visually-hidden">
           Value to be converted
@@ -110,8 +91,8 @@ const PxConvertion = () => {
           inputOnchange={(e) => setUnitValue(e.target.value)}
           selectValue={toBeConverted}
           selectOnchange={(value) => {
-            setToBeConverted(value);
-            calcResult();
+            setToBeConverted(value)
+            calcResult()
           }}
           selectItemsArr={SELECT_ITEMS_VALUES}
         />
@@ -140,8 +121,8 @@ const PxConvertion = () => {
           <Select
             value={convertedSelected}
             onValueChange={(value) => {
-              setConvertedSelected(value);
-              calcResult();
+              setConvertedSelected(value)
+              calcResult()
             }}
           >
             <SelectTrigger
@@ -193,7 +174,7 @@ const PxConvertion = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default PxConvertion;
+export default PxConvertion

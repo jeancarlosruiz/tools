@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Space_Mono, Outfit } from 'next/font/google'
-import { DARK_THEME, LIGHT_THEME } from '@/utils/colors'
+// import { DARK_THEME, LIGHT_THEME } from '@/utils/colors'
 import Header from '../components/header/header'
 import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
@@ -28,7 +28,7 @@ export default function RootLayout({
   // const themeColors: {} = theme === 'light' ? LIGHT_THEME : DARK_THEME;
 
   return (
-    <html lang="en" style={DARK_THEME}>
+    <html lang="en">
       <body className={spaceMono.className}>
         <Toaster
           visibleToasts={1}

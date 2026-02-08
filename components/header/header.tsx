@@ -51,7 +51,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`py-[20px] transition-all duration-300 ${
+      className={`py-5 transition-all duration-300 ${
         scrolled ? 'backdrop-blur-md' : 'bg-transparent'
       }`}
     >
@@ -75,7 +75,7 @@ const Header = () => {
             className="items-center flex"
             onMouseLeave={() => setHoveredNavItem(null)}
           >
-            <ul className="flex items-center">
+            <ul className="flex items-center gap-4">
               {navLinks.map(({ label, href, external }, index) => (
                 <motion.li
                   key={href}
@@ -88,7 +88,7 @@ const Header = () => {
                     {hoveredNavItem === label && (
                       <motion.div
                         layoutId="hovered-backdrop"
-                        className="absolute inset-0 pointer-events-none"
+                        className="absolute inset-0 bg-teal/15 pointer-events-none"
                         initial={{
                           borderRadius: 8,
                         }}
@@ -104,7 +104,7 @@ const Header = () => {
                     href={href}
                     target={external ? '_blank' : undefined}
                     onMouseEnter={() => setHoveredNavItem(label)}
-                    className="relative text-text-secondary px-[16px] py-[8px] transition-opacity hover:text-text-primary hover:opacity-[1]"
+                    className="relative text-text-secondary px-4 py-2 transition-opacity hover:text-text-primary hover:opacity-[1]"
                   >
                     {label}
                   </Link>

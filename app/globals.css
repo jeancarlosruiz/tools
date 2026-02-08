@@ -140,58 +140,55 @@
   --clr-black-600: var(--zinc-tinted-900);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+  body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--body-fs);
+  }
 
-body {
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-size: var(--body-fs);
-}
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    /* letter-spacing: -0.016rem; */
+  }
 
-h1,
-h2,
-h3 {
-  text-wrap: balance;
-  /* letter-spacing: -0.016rem; */
-}
+  /* Titles */
+  h1 {
+    font-size: var(--title-fs);
+  }
 
-/* Titles */
-h1 {
-  font-size: var(--title-fs);
-}
+  /* Body text */
+  p {
+    text-wrap: pretty;
+  }
 
-/* Body text */
-p {
-  text-wrap: pretty;
-}
+  button {
+    font: inherit;
+  }
 
-button {
-  font: inherit;
-}
+  img,
+  svg {
+    height: auto;
+    max-width: 100%;
+  }
 
-img,
-svg {
-  height: auto;
-  max-width: 100%;
-}
-
-a,
-li {
-  list-style: none;
-  text-decoration: inherit;
-  color: inherit;
+  a,
+  li {
+    list-style: none;
+    text-decoration: inherit;
+    color: inherit;
+  }
 }
 
 .svg path {

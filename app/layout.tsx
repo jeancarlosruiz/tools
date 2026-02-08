@@ -1,21 +1,22 @@
 import type { Metadata } from 'next'
-import { Space_Mono, Outfit } from 'next/font/google'
+import { Space_Grotesk } from 'next/font/google'
 // import { DARK_THEME, LIGHT_THEME } from '@/utils/colors'
 import Header from '../components/header/header'
 import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
 import Footer from '@/components/footer/footer'
 
-const spaceMono = Space_Mono({
-  weight: ['400', '700'],
+const spaceGrotesk = Space_Grotesk({
+  weight: ['400', '600', '700'],
   subsets: ['latin'],
 })
 
-const outfit = Outfit({ subsets: ['latin'], weight: ['700'] })
-
 export const metadata: Metadata = {
-  title: 'Tools',
+  title: 'Tools | JRuiz',
   description: 'Everyday tools!',
+  icons: {
+    icon: '/icon.svg',
+  },
 }
 
 export default function RootLayout({
@@ -29,16 +30,15 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={spaceMono.className}>
+      <body className={spaceGrotesk.className}>
         <Toaster
           visibleToasts={1}
           duration={1500}
           position="top-right"
-          className={outfit.className}
+          className={spaceGrotesk.className}
         />
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   )

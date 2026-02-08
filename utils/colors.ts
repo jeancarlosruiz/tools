@@ -1,23 +1,23 @@
 import { ThemeColors } from '@/types';
 
 export const LIGHT_THEME: ThemeColors = {
-  '--bg-color': 'var(--clr-white-400)',
-  '--text-color': 'var(--clr-black-800)',
-  '--primary-color': 'var(--clr-green-700)',
-  '--secondary-color': 'var(--clr-green-400)',
-  '--accent-color': 'var(--clr-blue-100)',
-  '--border-color': 'var(--clr-black-400)',
-  '--bg-input': 'var(--clr-white-500)',
-  '--select-item-hover': 'var(--clr-white-600)',
+  '--bg-color': 'oklch(1 0 0)',
+  '--text-color': 'oklch(0.145 0 0)',
+  '--primary-color': 'var(--teal)',
+  '--secondary-color': 'var(--teal-light)',
+  '--accent-color': 'var(--teal-dark)',
+  '--border-color': 'oklch(0.922 0 0)',
+  '--bg-input': 'oklch(0.97 0 0)',
+  '--select-item-hover': 'oklch(0.97 0 0 / 0.5)',
 };
 
 export const DARK_THEME: ThemeColors = {
-  '--bg-color': 'var(--clr-black-800)',
-  '--text-color': 'var(--clr-white-500)',
-  '--primary-color': 'var(--clr-green-600)',
-  '--secondary-color': 'var(--clr-blue-100)',
-  '--accent-color': 'var(--clr-green-500)',
-  '--border-color': 'var(--clr-black-400)',
-  '--bg-input': 'var(--clr-black-700)',
-  '--select-item-hover': 'var(--clr-black-500)',
+  '--bg-color': 'var(--zinc-tinted-900)',
+  '--text-color': 'var(--text-primary)',
+  '--primary-color': 'var(--teal)',
+  '--secondary-color': 'var(--teal-light)',
+  '--accent-color': 'var(--teal-dark)',
+  '--border-color': 'var(--zinc-tinted-700)',
+  '--bg-input': 'var(--zinc-tinted-800)',
+  '--select-item-hover': 'oklch(0.225 0.01 200 / 0.5)',
 };

@@ -13,21 +13,25 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
         with:
-          fetch-depth: 0
+          version: latest
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
+          cache: 'pnpm'
 
       - name: Dependencies!
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Lint 🧹🫧
-        run: npm run lint
+        run: pnpm lint
 
       - name: Instalando Vercel CLI
-        run: npm install --global vercel
+        run: pnpm add --global vercel
 
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}

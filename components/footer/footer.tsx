@@ -1,12 +1,10 @@
-import { Outfit } from "next/font/google";
 import Link from "next/link";
 import styles from "./footer.module.css";
 
-const outfit = Outfit({ subsets: ["latin"], weight: ["700"] });
 function Footer() {
   return (
     <footer className={`app-container ${styles.footer}`}>
-      <span className={outfit.className}>Jean Ruiz: </span>
+      <span style={{ fontWeight: 700 }}>Jean Ruiz: </span>
 
       <nav className={styles.navegation}>
         <Link

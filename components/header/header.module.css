@@ -1,18 +1,15 @@
-.header {
-  padding-block: 20px;
-
-  display: flex;
-}
-
 .logoLink {
   font-weight: 700;
   display: inline-flex;
-  justify-content: baseline;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  text-decoration: none;
 }
 
-.svg path {
-  fill: var(--text-color);
+.logoJ {
+  color: var(--teal);
+}
+
+.logoRuiz {
+  color: var(--text-primary);
 }
